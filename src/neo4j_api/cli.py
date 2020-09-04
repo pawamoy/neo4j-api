@@ -12,16 +12,32 @@
 """Module that contains the command line application."""
 
 import argparse
+from typing import List, Optional
 
 
-def get_parser():
-    """Return the CLI argument parser."""
+def get_parser() -> argparse.ArgumentParser:
+    """
+    Return the CLI argument parser.
+
+    Returns:
+        An argparse parser.
+    """
     return argparse.ArgumentParser(prog="neo4j-api")
 
 
-def main(args=None):
-    """The main function, which is executed when you type `neo4j-api` or `python -m neo4j_api`."""
+def main(args: Optional[List[str]] = None) -> int:
+    """
+    Run the main program.
+
+    This function is executed when you type `neo4j-api` or `python -m neo4j_api`.
+
+    Arguments:
+        args: Arguments passed from the command line.
+
+    Returns:
+        An exit code.
+    """
     parser = get_parser()
     opts = parser.parse_args(args=args)
-    print(opts)
+    print(opts)  # noqa: WPS421 (side-effect in main is fine)
     return 0
