@@ -17,7 +17,9 @@ class Node(BaseModel):
 
 
 @app.get("/nodes")
-async def get_nodes(labels: Optional[str] = None,) -> List[Node]:
+async def get_nodes(
+    labels: Optional[str] = None,
+) -> List[Node]:
     pass
 
 

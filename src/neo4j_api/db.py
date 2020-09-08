@@ -3,7 +3,7 @@ import traceback
 from concurrent import futures
 
 import neo4j
-from neo4j.v1 import GraphDatabase, Node, basic_auth
+from neo4j.v1 import GraphDatabase, basic_auth
 
 RETRY_WAITS = [0, 1, 4]  # How long to wait after each successive failure.
 
